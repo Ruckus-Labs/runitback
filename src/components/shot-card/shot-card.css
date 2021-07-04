@@ -17,6 +17,7 @@
      position: relative;
      width: 100%;
      z-index: 6;
+     display: flex;
 }
 
 .shot-card .image-container img {
