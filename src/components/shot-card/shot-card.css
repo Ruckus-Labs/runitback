@@ -62,4 +62,5 @@
      margin-top: 10px;
      font-weight: 800;
      font-size: 14px;
+     color: rgba(var(--darkGray), 0.9);
 }

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import VanillaTilt from 'vanilla-tilt';
 import Checkmark from "../common/Checkmark.js";
 import './shot-card.css';
 
 
 export default function ShotCard(props) {
+
+    VanillaTilt.init(document.querySelectorAll(".shot-card"));
 
     const [isLoaded, setIsLoaded] = useState('false');
 
@@ -12,7 +15,13 @@ export default function ShotCard(props) {
 
     function handleCardClick(e) {
         const element = e.target;
-        element.classList.contains('active') ? element.classList.remove('active') : element.classList.add('active');
+        if (element.classList.contains('active')) {
+            element.classList.remove('active');
+            VanillaTilt.init(element.parentElement.parentElement)
+        } else {
+            element.classList.add('active');
+            element.parentElement.parentElement.vanillaTilt.destroy();
+        }
     }
 
     function Image(props) {
@@ -20,10 +29,7 @@ export default function ShotCard(props) {
             return (
                 <div
                     onClick={handleCardClick}
-                    data-tilt={isLoaded}
-                    data-tilt-scale="1.1"
                     className="image-container">
-
                     <div className="export-overlay">
                         <Checkmark />
                     </div>
@@ -42,6 +48,7 @@ export default function ShotCard(props) {
 
     return (
         <div
+            data-tilt
             key={props.shotData.id}
             data-title={props.shotData.title}
             data-description={props.shotData.description.replace(/<\/?[^>]+(>|$)/g, "")}

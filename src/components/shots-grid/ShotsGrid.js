@@ -4,7 +4,6 @@ import "./shots-grid.css";
 
 export default function ShotsGrid(props) {
 
-    console.log(props);
     const shots = props.data;
 
     return (
