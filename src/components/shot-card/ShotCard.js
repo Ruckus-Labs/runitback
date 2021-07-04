@@ -3,6 +3,17 @@ import VanillaTilt from 'vanilla-tilt';
 import Checkmark from "../common/Checkmark.js";
 import './shot-card.css';
 
+export function handleCardClick(e) {
+    const element = e.target;
+    if (element.classList.contains('active')) {
+        element.classList.remove('active');
+        VanillaTilt.init(element.parentElement.parentElement);
+
+    } else {
+        element.classList.add('active');
+        element.parentElement.parentElement.vanillaTilt.destroy();
+    }
+}
 
 export default function ShotCard(props) {
 
@@ -12,17 +23,6 @@ export default function ShotCard(props) {
 
     // trigger useEffect to pass the not pristine statususeEffect()
     useEffect(() => { /* code */ });
-
-    function handleCardClick(e) {
-        const element = e.target;
-        if (element.classList.contains('active')) {
-            element.classList.remove('active');
-            VanillaTilt.init(element.parentElement.parentElement)
-        } else {
-            element.classList.add('active');
-            element.parentElement.parentElement.vanillaTilt.destroy();
-        }
-    }
 
     function Image(props) {
         if (isLoaded) {
