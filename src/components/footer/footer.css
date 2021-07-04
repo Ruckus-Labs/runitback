@@ -1,0 +1,36 @@
+footer {
+     margin-top: 40px;
+     padding: 5% var(--globalPadding);
+     background: rgb(var(--lightGray));
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     font-size: 14px;
+     color: rgba(var(--darkGray), 0.8);
+}
+
+footer .logo {
+     max-height: 20px;
+     margin-bottom: 20px;
+}
+
+footer .logo path {
+     fill: rgb(var(--pink));
+}
+
+footer .logo {
+     transform: scale(150%);
+     transform-origin: left;
+}
+
+.subfooter {
+     margin-top: 40px;
+     padding-top: 40px;
+     border-top: 1px solid rgba(var(--darkGray), 0.1);
+     display: block;
+     width: 100%;
+}
+
+.subfooter p + p {
+     margin-top: 10px;
+}

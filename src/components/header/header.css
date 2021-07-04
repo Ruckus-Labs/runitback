@@ -1,0 +1,36 @@
+header {
+     display: flex;
+     align-items: center;
+     padding: 20px;
+     box-shadow: inset 0px -1px 0px rgb(var(--mediumGray));
+}
+
+header .logo {
+     margin-right: auto;
+     max-height: 22px;
+}
+
+.help-circle {
+     opacity: 1;
+     transition: opacity 0.2s;
+     cursor: pointer;
+     margin-right: 20px;
+}
+
+.help-circle:hover {
+     opacity: 0.5;
+}
+
+header a {
+     color: rgba(var(--darkGray), 0.5);
+     font-weight: bold;
+     text-decoration: none;
+     font-family: "Neue Hass Grotesk";
+     font-weight: 700;
+     font-size: 14px;
+     transition: color 0.2s;
+}
+
+header a:hover {
+     color: rgb(var(--pink));
+}

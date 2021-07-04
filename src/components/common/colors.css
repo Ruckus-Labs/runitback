@@ -1,0 +1,9 @@
+:root {
+     --lightGray: 250, 250, 251;
+     --mediumGray: 243, 243, 244;
+     --darkGray: 61, 61, 78;
+     --pink: 234, 76, 137;
+     --black: 39, 39, 39;
+
+     --globalPadding: 40px;
+}

@@ -1,0 +1,30 @@
+button {
+     border: none;
+     box-shadow: none;
+     background-color: rgb(var(--pink));
+     color: white;
+     font-size: 15px;
+     font-weight: 400;
+     font-family: "Neue Hass Grotesk";
+     border-radius: 8px;
+     padding: 10px;
+     margin: 5px;
+     cursor: pointer;
+     opacity: 1;
+     transition: opacity 0.2s;
+}
+
+button.secondary {
+     background: rgba(var(--darkGray), 0.1);
+     color: rgb(var(--darkGray));
+     transition: background-color 0.2s;
+}
+
+button.secondary:hover {
+     background-color: rgba(var(--darkGray), 0.2);
+     opacity: 1;
+}
+
+button:hover {
+     opacity: 0.8;
+}

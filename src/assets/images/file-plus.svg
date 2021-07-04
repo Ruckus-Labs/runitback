@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>file-plus</title>
+    <g id="file-plus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6">
+            <g id="Group-4">
+                <circle id="Oval" fill="#EA4C89" cx="10" cy="10" r="10"></circle>
+                <path d="M14.9997758,5.49999995 C15.4140129,5.5001857 15.7890439,5.66816218 16.0605908,5.93964183 C16.3321376,6.21112149 16.500207,6.58611085 16.5004952,7.00012373 L16.5004952,7.00012373 L16.5019807,13.000348 C16.5022547,13.394137 16.3506887,13.7525348 16.1025338,14.0201723 C15.8562112,14.2858336 15.5148315,14.4623122 15.1323128,14.4949821 L15.1323128,14.4949821 L5,14.5 C4.58578644,14.5 4.21078644,14.3321068 3.93933983,14.0606602 C3.66789322,13.7892136 3.5,13.4142136 3.5,13 L3.5,13 L3.5,7 C3.5,6.58578644 3.66789322,6.21078644 3.93933983,5.93933983 C4.21078644,5.66789322 4.58578644,5.5 5,5.5 L5,5.5 Z" id="Rectangle" stroke="#FFFFFF"></path>
+            </g>
+            <g id="Group-3" transform="translate(8.000000, 8.000000)" stroke="#FFFFFF" strokeLinecap="round" strokeLinejoin="round" stroke-width="1.2">
+                <line x1="1.875" y1="3.6" x2="1.875" y2="0" id="Path"></line>
+                <line x1="0" y1="1.8" x2="3.75" y2="1.8" id="Path"></line>
+            </g>
+        </g>
+    </g>
+</svg>

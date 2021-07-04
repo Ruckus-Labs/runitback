@@ -1,0 +1,13 @@
+@import "../common/reset.css";
+@import "../common/button.css";
+@import "../common/colors.css";
+@import "../common/typography.css";
+
+.shots-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-gap: var(--globalPadding);
+     row-gap: var(--globalPadding);
+     width: 95%;
+     margin: 0 auto;
+}
