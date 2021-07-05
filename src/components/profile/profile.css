@@ -1,5 +1,6 @@
 .loaded-profile {
      width: 95%;
+     max-width: 1680px;
      margin: 0 auto;
      margin-bottom: 40px;
 }

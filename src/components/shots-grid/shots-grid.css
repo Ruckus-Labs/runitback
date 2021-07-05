@@ -9,5 +9,6 @@
      grid-gap: var(--globalPadding);
      row-gap: var(--globalPadding);
      width: 95%;
+     max-width: 1680px;
      margin: 0 auto;
 }

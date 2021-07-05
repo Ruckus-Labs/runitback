@@ -50,6 +50,7 @@ export default function ShotCard(props) {
         <div
             data-tilt
             key={props.shotData.id}
+            data-id={props.shotData.id}
             data-title={props.shotData.title}
             data-description={props.shotData.description.replace(/<\/?[^>]+(>|$)/g, "")}
             data-tags={props.shotData.tags}
