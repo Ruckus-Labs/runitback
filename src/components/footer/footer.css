@@ -18,17 +18,23 @@ footer .logo path {
      fill: rgb(var(--pink));
 }
 
-footer .logo {
-     transform: scale(150%);
-     transform-origin: left;
+.superfooter {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     width: 100%;
+     max-width: 1680px;
+     margin: 0 auto;
 }
 
 .subfooter {
-     margin-top: 40px;
-     padding-top: 40px;
      border-top: 1px solid rgba(var(--darkGray), 0.1);
      display: block;
      width: 100%;
+     max-width: 1680px;
+     margin: 0 auto;
+     margin-top: 40px;
+     padding-top: 40px;
 }
 
 .ruckus-logo {
