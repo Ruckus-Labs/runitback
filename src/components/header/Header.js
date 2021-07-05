@@ -20,9 +20,9 @@ export default function Header() {
     return (
         <header>
             <Logo />
-            <HelpCircle />
-            <button className="secondary" onClick={() => handleStartOverClick()}>Start Over</button>
-            <button className="secondary" onClick={() => handleDemoClick()}>RunBack a Demo</button>
+            {/*<HelpCircle />*/}
+            {/*<button className="secondary" onClick={() => handleStartOverClick()}>Start Over</button>*/}
+            {/*<button className="secondary" onClick={() => handleDemoClick()}>RunBack a Demo</button>*/}
             <button onClick={() => handleRunItBackClick()}>RunBack Your Data</button>
         </header>
     );
