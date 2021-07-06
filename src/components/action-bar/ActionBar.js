@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import VanillaTilt from 'vanilla-tilt';
 import domtoimage from 'dom-to-image';
 import JSZip from 'jszip';
@@ -7,7 +7,14 @@ import './action-bar.css';
 
 export default function ActionBar() {
 
+    const [activeCards, setActiveCards] = useState(null);
+
+    function updateActiveCardCount(count) {
+        setActiveCards(count.length);
+    }
+
     function handleSelectClick(selection) {
+
         const shots = document.querySelectorAll('.export-overlay');
 
         shots.forEach(shot => {
@@ -24,13 +31,16 @@ export default function ActionBar() {
                 shot.classList.remove('active');
                 VanillaTilt.init(shot.parentElement.parentElement)
             }
-        })
+        });
+
+        // update the number of cards selected;
+        updateActiveCardCount(getSelectedShots());
     }
 
     function getSelectedShots() {
         const selectedActiveShots = document.querySelectorAll('.export-overlay.active');
         const shots = document.querySelectorAll('.export-overlay');
-        const selectedShotArray = [];
+        let selectedShotArray = [];
 
         if (selectedActiveShots.length === 0) {
             shots.forEach(shot => {
@@ -52,9 +62,6 @@ export default function ActionBar() {
                 const shotArray = [];
                 shotArray.push(parentShotCard);
                 let associatedImage = selectedShot.nextSibling;
-                console.log(associatedImage);
-                console.log(associatedImage.naturalHeight);
-                console.log(associatedImage.naturalWidth);
                 const height = associatedImage.naturalHeight;
                 const width = associatedImage.naturalWidth;
                 associatedImage = domtoimage.toPng(associatedImage, { height: height, width: width, }).then(function (dataUrl) {
@@ -73,33 +80,24 @@ export default function ActionBar() {
         const zip = new JSZip();
         const dataToZip = getSelectedShots();
 
-        console.log(dataToZip);
-
         dataToZip.forEach(dataset => {
-            console.log(dataset);
             zip.folder(`${dataset[0].title} (${dataset[0].id})`).file(`shot-info.txt`, `Title: ${dataset[0].title}\nDescription: ${dataset[0].description}\nTags: ${dataset[0].tags}\nPublished: ${dataset[0].published}`);
             zip.folder(`${dataset[0].title} (${dataset[0].id})`).file(`shot.png`, dataset[1], { base64: true, });
         })
 
         zip.generateAsync({ type: "blob" }).then(function (blob) {
-            console.log(blob);
-            fileSaver.saveAs(blob, "runitback.zip");
+            //fileSaver.saveAs(blob, "runitback.zip");
         }, function (err) {
             console.log(err);
         });
-
-        console.log(zip);
-        console.log(dataToZip);
-
-
-        console.warn('Downloading...')
     }
 
     return (
         <div className="action-bar">
             <button onClick={() => handleSelectClick('all')} className="secondary">Select All Shots</button>
             <button onClick={() => handleSelectClick('none')} className="secondary">Unselect All Shots</button>
-            <button onClick={handleDownloadClick}>Download All Shots</button>
+            {activeCards ? <button onClick={handleDownloadClick}>Download {activeCards ? activeCards : "All"} Shot{activeCards > 1 ? 's' : ''}</button> : ''}
+            <button onClick={() => updateActiveCardCount(getSelectedShots())}>Get Count ({activeCards})</button>
         </div>
     )
 }
