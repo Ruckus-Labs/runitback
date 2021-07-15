@@ -7,11 +7,7 @@ import './action-bar.css';
 
 export default function ActionBar() {
 
-    const [activeCards, setActiveCards] = useState(null);
-
-    function updateActiveCardCount(count) {
-        setActiveCards(count.length);
-    }
+    const [downloading, setDownloading] = useState(false);
 
     function handleSelectClick(selection) {
 
@@ -32,9 +28,6 @@ export default function ActionBar() {
                 VanillaTilt.init(shot.parentElement.parentElement)
             }
         });
-
-        // update the number of cards selected;
-        updateActiveCardCount(getSelectedShots());
     }
 
     function getSelectedShots() {
@@ -75,8 +68,8 @@ export default function ActionBar() {
         return selectedShotArray;
     }
 
-
     function handleDownloadClick() {
+        setDownloading(true);
         const zip = new JSZip();
         const dataToZip = getSelectedShots();
 
@@ -86,18 +79,18 @@ export default function ActionBar() {
         })
 
         zip.generateAsync({ type: "blob" }).then(function (blob) {
-            //fileSaver.saveAs(blob, "runitback.zip");
+            fileSaver.saveAs(blob, "runitback.zip");
+            setDownloading(false);
         }, function (err) {
             console.log(err);
         });
     }
 
     return (
-        <div className="action-bar">
+        <div className={downloading === true ? 'action-bar pending' : 'action-bar'}>
             <button onClick={() => handleSelectClick('all')} className="secondary">Select All Shots</button>
             <button onClick={() => handleSelectClick('none')} className="secondary">Unselect All Shots</button>
-            {activeCards ? <button onClick={handleDownloadClick}>Download {activeCards ? activeCards : "All"} Shot{activeCards > 1 ? 's' : ''}</button> : ''}
-            <button onClick={() => updateActiveCardCount(getSelectedShots())}>Get Count ({activeCards})</button>
+            <button onClick={handleDownloadClick}>Download Shots</button>
         </div>
     )
 }
