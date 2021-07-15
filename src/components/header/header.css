@@ -34,3 +34,7 @@ header a {
 header a:hover {
      color: rgb(var(--pink));
 }
+
+input[type="file"] {
+     display: none;
+}
