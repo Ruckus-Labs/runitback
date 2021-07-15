@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function ShotCount(props) {
-
-    console.log(props);
 
     const [shotCount, setShotCount] = useState("0");
 
@@ -13,8 +11,6 @@ export default function ShotCount(props) {
     } else {
         return shotCount;
     }
-
-    console.log(shots);
 
     return (
         <>
