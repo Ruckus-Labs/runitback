@@ -1,16 +1,15 @@
 import ShotCard from "../shot-card/ShotCard.js";
-//import JSZip from "jszip";
 import "./shots-grid.css";
 
-export default function ShotsGrid(props) {
+export default function ShotsGrid({ data, setData, numberOfActiveShots, setNumberOfActiveShots }) {
 
-    const shots = props.data;
+    const shots = data;
 
     return (
         <section data-pristine="true" className="shots-grid">
             {shots.map((shot) => {
                 return (
-                    <ShotCard key={shot.id} shotData={shot} />
+                    <ShotCard numberOfActiveShots={numberOfActiveShots} setNumberOfActiveShots={setNumberOfActiveShots} key={shot.id} shotData={shot} />
                 );
             })}
         </section>
