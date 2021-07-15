@@ -1,29 +1,18 @@
 import "./header.css";
 import Logo from '../common/Logo.js';
-import HelpCircle from "../common/HelpCircle.js";
+import RunItBackButton from "../run-it-back-button/RunItBackButton";
+//import HelpCircle from "../common/HelpCircle.js";
+//import ShotData from '../shot-data/ShotData';
 
-function handleStartOverClick() {
-    console.log('starting over!');
-}
+export default function Header({ shotData, setShotData }) {
 
-function handleDemoClick() {
-    console.log('running demo');
-}
-
-function handleRunItBackClick() {
-    console.log('running it back');
-}
-
-
-
-export default function Header() {
     return (
         <header>
             <Logo />
-            <HelpCircle />
-            <button className="secondary" onClick={() => handleStartOverClick()}>Start Over</button>
-            <button className="secondary" onClick={() => handleDemoClick()}>RunBack a Demo</button>
-            <button onClick={() => handleRunItBackClick()}>RunBack Your Data</button>
+            {/*<HelpCircle />*/}
+            {shotData && <button className="secondary" onClick={() => window.location.reload()}>Start Over</button>}
+            {/*<button className="secondary" onClick={() => handleDemoClick()}>RunBack a Demo</button>*/}
+            <RunItBackButton setShotData={setShotData} />
         </header>
     );
 }

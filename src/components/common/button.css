@@ -1,4 +1,5 @@
-button {
+button,
+.button {
      border: none;
      box-shadow: none;
      background-color: rgb(var(--pink));

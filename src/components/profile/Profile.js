@@ -1,18 +1,21 @@
 import './profile.css';
 import ActionBar from '../action-bar/ActionBar.js';
 
-export default function Profile(props) {
+export default function Profile({ profileImage, numberOfShots, name, createdAt }) {
+
+
+    let profileBirthday = new Date(createdAt).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' });;
 
     return (
         <section className="loaded-profile">
             <aside className="meta">
-                <img src={props.data.avatar_url} alt="Profile." />
-                <h2>{props.data.name}</h2>
+                <img src={profileImage} alt={`${name}'s profile.`} />
+                <h2>{name}</h2>
             </aside>
             <nav className="details">
                 <ul>
-                    <li>Profile Created <span className="count">{props.data.created_at}</span></li>
-                    <li>Total Shots <span className="count">{props.shotData.length}</span></li>
+                    <li>Profile Created <span className="count">{profileBirthday}</span></li>
+                    <li>Total Shots <span className="count">{numberOfShots}</span></li>
                 </ul>
                 <ActionBar />
             </nav>

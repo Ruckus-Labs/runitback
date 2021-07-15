@@ -1,63 +1,58 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import VanillaTilt from 'vanilla-tilt';
 import Checkmark from "../common/Checkmark.js";
 import './shot-card.css';
 
-export function handleCardClick(e) {
-    const element = e.target;
-    if (element.classList.contains('active')) {
-        element.classList.remove('active');
-        VanillaTilt.init(element.parentElement.parentElement);
 
-    } else {
-        element.classList.add('active');
-        element.parentElement.parentElement.vanillaTilt.destroy();
-    }
-}
-
-export default function ShotCard(props) {
+export default function ShotCard({ shotData }) {
 
     VanillaTilt.init(document.querySelectorAll(".shot-card"));
 
-    const [isLoaded, setIsLoaded] = useState('false');
+    function handleCardClick(e) {
 
-    // trigger useEffect to pass the not pristine statususeEffect()
-    useEffect(() => { /* code */ });
+        const element = e.target;
+        const parent = element.parentElement.parentElement;
 
-    function Image(props) {
-        if (isLoaded) {
-            return (
-                <div
-                    onClick={handleCardClick}
-                    className="image-container">
-                    <div className="export-overlay">
-                        <Checkmark />
-                    </div>
-                    <img
-                        data-loading={isLoaded}
-                        data-key={props.shotData.id}
-                        onLoad={() => setIsLoaded('true')}
-                        src={props.shotData.images.hidpi}
-                        alt={props.shotData.title}
-                    />
-                </div>
-            )
+
+        if (element.classList.contains('active')) {
+            element.classList.remove('active');
+            VanillaTilt.init(parent);
+        } else {
+            element.classList.add('active');
+            //parent.vanillaTilt.destroy();
         }
-        return <h2>Loading...</h2>;
+    }
+
+    function Image({ shotData }) {
+
+        return (
+            <div
+                onClick={handleCardClick}
+                className="image-container">
+                <div className="export-overlay">
+                    <Checkmark />
+                </div>
+                <img
+                    data-key={shotData.id}
+                    src={shotData.images.hidpi}
+                    alt={shotData.title}
+                />
+            </div>
+        )
     }
 
     return (
         <div
             data-tilt
-            key={props.shotData.id}
-            data-id={props.shotData.id}
-            data-title={props.shotData.title}
-            data-description={props.shotData.description.replace(/<\/?[^>]+(>|$)/g, "")}
-            data-tags={props.shotData.tags}
-            data-published={props.shotData.published_at}
+            key={shotData.id}
+            data-id={shotData.id}
+            data-title={shotData.title}
+            data-description={shotData.description.replace(/<\/?[^>]+(>|$)/g, "")}
+            data-tags={shotData.tags}
+            data-published={shotData.published_at}
             className="shot-card">
-            <Image shotData={props.shotData} />
-            <p>{props.shotData.title}</p>
+            <Image shotData={shotData} />
+            <p>{shotData.title}</p>
         </div>
     )
 }
