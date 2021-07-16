@@ -1,9 +1,19 @@
+* {
+     box-sizing: border-box;
+}
+
 html {
      font-family: "Neue Hass Grotesk";
 }
 
-* {
-     box-sizing: border-box;
+body {
+     margin: 0;
+}
+
+.App {
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
 }
 
 ::selection {

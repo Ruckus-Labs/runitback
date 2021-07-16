@@ -4,7 +4,7 @@
      flex-direction: column;
      justify-content: center;
      width: 100%;
-     margin: 200px 0;
+     margin: auto;
 }
 
 .empty-state-container p {
