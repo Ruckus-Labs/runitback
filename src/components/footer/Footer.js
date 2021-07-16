@@ -7,7 +7,7 @@ export default function Footer() {
         <footer>
             <aside className="superfooter">
                 <Logo />
-                <p>RunItBack is a tool to help you export your data from <a href="https://www.dribbble.com">Dribbble</a>. Learn more about this project on <a href="https://github.com/damianmakki/runitback">GitHub</a>.</p>
+                <p>RunItBack is a tool to help you export your data from <a href="https://www.dribbble.com">Dribbble</a>. Learn more about this project on <a href="https://github.com/Ruckus-Labs/runitback">GitHub</a>.</p>
             </aside>
             <aside className="subfooter">
                 <p>© 2021</p>
