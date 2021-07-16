@@ -1,6 +1,6 @@
 ![RunItBack](./src/assets/images/run-it-back--primary--pink.svg)
 
-RunItBack is a tool to help you export your data from <a href="https://www.dribbble.com">Dribbble</a>.
+RunItBack is a tool to help you export your data from <a href="https://www.dribbble.com">Dribbble</a>. Ready to get started? [RunItBack](https://ruckus-labs.github.io/runitback/)!
 
 ## How To Use
 
