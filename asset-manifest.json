@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/runitback/static/css/main.2320da44.chunk.css",
+    "main.js": "/runitback/static/js/main.08bb7f00.chunk.js",
+    "main.js.map": "/runitback/static/js/main.08bb7f00.chunk.js.map",
+    "runtime-main.js": "/runitback/static/js/runtime-main.d1e37e66.js",
+    "runtime-main.js.map": "/runitback/static/js/runtime-main.d1e37e66.js.map",
+    "static/js/2.c4022ff0.chunk.js": "/runitback/static/js/2.c4022ff0.chunk.js",
+    "static/js/2.c4022ff0.chunk.js.map": "/runitback/static/js/2.c4022ff0.chunk.js.map",
+    "index.html": "/runitback/index.html",
+    "static/css/main.2320da44.chunk.css.map": "/runitback/static/css/main.2320da44.chunk.css.map",
+    "static/js/2.c4022ff0.chunk.js.LICENSE.txt": "/runitback/static/js/2.c4022ff0.chunk.js.LICENSE.txt",
+    "static/media/shots-grid.css": "/runitback/static/media/NeueHaasGroteskRegular.8a8dbcef.ttf",
+    "static/media/ruckus-logo.9fe94838.svg": "/runitback/static/media/ruckus-logo.9fe94838.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d1e37e66.js",
+    "static/js/2.c4022ff0.chunk.js",
+    "static/css/main.2320da44.chunk.css",
+    "static/js/main.08bb7f00.chunk.js"
+  ]
+}
