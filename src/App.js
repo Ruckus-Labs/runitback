@@ -8,7 +8,6 @@ import EmptyState from "./components/empty-state/EmptyState";
 function App() {
 
      const [shotData, setShotData] = useState(null);
-     const [numberOfActiveShots, setNumberOfActiveShots] = useState('0');
 
      return (
           <div className="App">
